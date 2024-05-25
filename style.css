@@ -1,0 +1,135 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333; /* Added a base text color */
+}
+
+.header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    display: flex; /* Use flexbox for better alignment */
+    justify-content: space-between; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000; /* Set logo color */
+}
+
+.location {
+    display: block;
+    font-size: 16px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.view-on-map {
+    text-decoration: none;
+    color: #000; /* Set link color */
+}
+
+.view-on-map:hover {
+    text-decoration: underline;
+}
+
+.content {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+.description {
+    margin-bottom: 40px;
+}
+
+.description h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222; /* Set heading color */
+}
+
+.description p {
+    line-height: 1.5; /* Improve readability with line-height */
+}
+
+.amenities,
+.key-features {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%; /* Equal width for both tables */
+    margin-right: 30px; /* Add spacing between tables */
+    padding-bottom: 35px;
+}
+
+.amenities table,
+.key-features table {
+    width: 100%; /* Make tables responsive */
+    border-collapse: collapse; /* Remove table borders */
+}
+
+.amenities table caption,
+.key-features table caption {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #eee; /* Add background color to captions */
+}
+
+.amenities th,
+.key-features th,
+.amenities td,
+.key-features td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Add table borders */
+    text-align: left; /* Align table data to the left */
+}
+.call-to-action {
+    display: flex; /* Use flexbox for side-by-side elements */
+    justify-content: space-between; /* Align elements horizontally */
+}
+
+.food-details {
+    width: 60%; /* Adjust width as needed */
+}
+
+.food-details h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.more-photos,
+.view-phone-no,
+.contact-owner {
+    background-color: #2AAECC; /* Set button background color */
+    color: #fff; /* Set button text color */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px; /* Add rounded corners */
+    text-decoration: none;
+    margin-right: 10px; /* Add spacing between buttons */
+}
+
+.more-photos:hover,
+.view-phone-no:hover,
+.contact-owner:hover {
+    background-color: #0095FF; /* Change button color on hover */
+}
+
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright {
+    color: #888;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textarea Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; 
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        textarea {
+            width: 100%; 
+            height: 200px; 
+            padding: 10px; 
+            font-size: 16px; 
+            border: 2px solid #007bff; 
+            border-radius: 8px;
+            box-sizing: border-box;
+            resize: vertical; 
+            margin-bottom: 10px;
+        }
+
+        textarea:focus {
+            outline: none; 
+            border-color: #0056b3;
+        }
+
+        label {
+            font-size: 18px; 
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        ::placeholder {
+            color: #999; 
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .saved-review {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <label for="message">Give your Review:</label><br>
+    <textarea id="message" name="message" placeholder="Type your review here..."></textarea>
+    <button id="submitBtn">Submit</button>
+
+    <div id="savedReviews"></div>
+
+    <script>
+        // Load the saved reviews when the page loads
+        window.onload = function() {
+            loadSavedReviews();
+        };
+
+        // Function to load the saved reviews
+        function loadSavedReviews() {
+            var savedReviews = JSON.parse(localStorage.getItem("savedReviews")) || [];
+            var savedReviewsDiv = document.getElementById("savedReviews");
+            savedReviewsDiv.innerHTML = "";
+
+            savedReviews.forEach(function(review, index) {
+                var reviewTextarea = document.createElement("textarea");
+                reviewTextarea.classList.add("saved-review");
+                reviewTextarea.value = review;
+                reviewTextarea.disabled = true;
+                savedReviewsDiv.appendChild(reviewTextarea);
+            });
+        }
+
+        // Function to save the review
+        function saveReview() {
+            var review = document.getElementById("message").value.trim();
+            if (review) {
+                var savedReviews = JSON.parse(localStorage.getItem("savedReviews")) || [];
+                savedReviews.push(review);
+                localStorage.setItem("savedReviews", JSON.stringify(savedReviews));
+                loadSavedReviews();
+                alert("Review submitted successfully and saved!");
+                document.getElementById("message").value = "";
+            } else {
+                alert("Please enter a review before submitting.");
+            }
+        }
+
+        // Adding click event listener to the submit button
+        document.getElementById("submitBtn").addEventListener("click", saveReview);
+    </script>
+</body>
+</html>
